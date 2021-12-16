@@ -2,7 +2,9 @@
   "token1": {
     "username": "Mihai",
     "admin": true,
-    "uploads": []
+    "uploads": [
+      "atuysk0.png"
+    ]
   },
   "testuser": {
     "username": "TEST",
