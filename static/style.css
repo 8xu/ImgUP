@@ -1,0 +1,69 @@
+:root {
+    --background: #EE7674;
+    --text-color: #FFF;
+    --second-text-color: #F8F4A6;
+    --link-color: #09F;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background-color: purple;
+    opacity: .75;
+}
+
+body {
+    font-family: monospace;
+    background-color: var(--background);
+    color: var(--text-color);
+    text-align: center;
+}
+
+main h1 {
+    font-size: 20em;
+    animation: animateText 3s infinite linear;
+}
+
+@keyframes animateText {
+    0% {
+        opacity: .5;
+    }
+    50% {
+        opacity: .5;
+    }
+    75% {
+        opacity: .75;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+a:any-link {
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 5px;
+    background-color: #000;
+}
+
+footer .version {
+    color: var(--second-text-color);
+}
+
+@media screen and ( max-width: 767px ) {
+    main {
+        margin-bottom: 10em;
+    }
+    main h1  {
+        font-size: 5em;
+    }
+}

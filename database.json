@@ -1,0 +1,12 @@
+{
+  "token1": {
+    "username": "Mihai",
+    "admin": true,
+    "uploads": []
+  },
+  "testuser": {
+    "username": "TEST",
+    "admin": false,
+    "uploads": []
+  }
+}
