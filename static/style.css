@@ -1,8 +1,10 @@
 :root {
-    --background: #EE7674;
+    --background: #310A31;
+    --footer: #C287E8;
+    --footer-color: #000;
+    --second-footer-color: #F8F4A6;
     --text-color: #FFF;
-    --second-text-color: #F8F4A6;
-    --link-color: #09F;
+    --link-color: #000;
 }
 
 html {
@@ -27,23 +29,18 @@ main h1 {
 }
 
 @keyframes animateText {
-    0% {
-        opacity: .5;
+    from {
+        opacity: .50;
     }
-    50% {
-        opacity: .5;
-    }
-    75% {
+    to {
         opacity: .75;
-    }
-    100% {
-        opacity: 1;
     }
 }
 
 a:any-link {
     text-decoration: none;
     color: var(--link-color);
+    font-weight: bolder;
 }
 
 footer {
@@ -51,12 +48,13 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 5px;
-    background-color: #000;
+    padding: 2px;
+    background-color: var(--footer);
+    color: var(--footer-color)
 }
 
 footer .version {
-    color: var(--second-text-color);
+    color: var(--second-footer-color);
 }
 
 @media screen and ( max-width: 767px ) {

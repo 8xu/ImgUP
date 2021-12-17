@@ -75,3 +75,6 @@ def userCount():
 def imageCount():
     imagecount = len(listdir('./uploads'))
     return imagecount
+
+def randomImage():
+    return random.choice(listdir(UPLOAD_FOLDER))

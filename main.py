@@ -1,4 +1,5 @@
 from os import path
+from random import choice
 from flask import Flask, render_template, request, send_from_directory, redirect
 from waitress import serve
 
@@ -34,11 +35,11 @@ def upload():
                 print(f'[UPLOAD] {getUsername(token)} ( {token} ) has uploaded {filename}.')
                 return f"{URL}/uploads/{filename}", 200
 
-@app.route(f'/uploads/<file_name>')
+@app.route(f'/uploads/<file_name>', methods=['GET'])
 def uploaded(file_name):
     return send_from_directory(UPLOAD_FOLDER, file_name)
 
-@app.route('/deleteall/<token>')
+@app.route('/deleteall/<token>', methods=['GET'])
 def delete(token):
     if checkToken(token):
         if checkAdmin(token):
@@ -50,8 +51,12 @@ def delete(token):
     else:
         return 'Invalid administrator permissions.', 401
 
+@app.route('/random', methods=['GET'])
+def random():
+    return redirect(f'uploads/{randomImage()}')
+
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template("404.html"), 404
+    return render_template("404.html")
 
 serve(app, host="0.0.0.0", port=3000)
